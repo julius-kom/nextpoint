@@ -1,0 +1,65 @@
+{
+  "realm": "nextpoint",
+  "enabled": true,
+
+  "roles": {
+    "realm": [
+      {
+        "name": "ADMIN"
+      },
+      {
+        "name": "TRAVELER"
+      }
+    ]
+  },
+
+  "clients": [
+    {
+      "clientId": "nextpoint-api",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "protocol": "openid-connect"
+    }
+  ],
+
+  "users": [
+    {
+      "username": "admin-user",
+      "enabled": true,
+      "email": "admin@nextpoint.test",
+      "emailVerified": true,
+      "firstName": "Anna",
+      "lastName": "Admin",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "ADMIN"
+      ]
+    },
+    {
+      "username": "traveler-user",
+      "enabled": true,
+      "email": "traveler@nextpoint.test",
+      "emailVerified": true,
+      "firstName": "Tom",
+      "lastName": "Traveler",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "traveler123",
+          "temporary": false
+        }
+      ],
+      "realmRoles": [
+        "TRAVELER"
+      ]
+    }
+  ]
+}

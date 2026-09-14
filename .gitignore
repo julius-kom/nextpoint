@@ -1,0 +1,47 @@
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Maven
+**/target/
+
+# Local Maven wrapper binary
+**/.mvn/wrapper/maven-wrapper.jar
+
+# Logs
+*.log
+
+# Allure
+**/.allure/
+**/allure-results/
+allure-report/
+
+# Environment / secrets
+.env
+*.env
+
+# Eclipse / STS
+**/.apt_generated/
+**/.classpath
+**/.factorypath
+**/.project
+**/.settings/
+**/.springBeans
+**/.sts4-cache/
+
+# NetBeans
+**/nbproject/private/
+**/nbbuild/
+**/dist/
+**/nbdist/
+**/.nb-gradle/
+**/build/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
