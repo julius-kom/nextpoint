@@ -1,4 +1,5 @@
 # NextPoint
+[![NextPoint API Tests](https://github.com/julius-kom/nextpoint/actions/workflows/api-tests.yml/badge.svg)](https://github.com/julius-kom/nextpoint/actions/workflows/api-tests.yml)
 
 NextPoint is a travel booking service created as a portfolio project for API and integration test automation.
 
@@ -109,6 +110,22 @@ The backend acts as an OAuth 2.0 Resource Server and validates JWT access tokens
 Tests create and use their own business entities instead of globally clearing the database.
 
 WireMock mappings and the RabbitMQ test queue are reset before each test to keep test scenarios isolated and reproducible.
+
+## Continuous Integration
+
+The project uses GitHub Actions for continuous integration.
+
+On every push or pull request to `main`, the CI pipeline:
+
+- sets up Java 21
+- starts PostgreSQL, WireMock, RabbitMQ, and Keycloak with Docker Compose
+- waits for Keycloak to become ready
+- starts the NextPoint Spring Boot application
+- waits for the application API to become available
+- runs the complete API automation test suite
+- uploads Allure test results as a build artifact
+
+Service readiness checks use bounded retries, so the pipeline fails with diagnostic information instead of waiting indefinitely if a service cannot start.
 
 ## Running Locally
 
